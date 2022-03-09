@@ -1,0 +1,170 @@
+<!doctype html>
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from themepresss.com/tf/html/tohoney/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Nov 2021 06:02:38 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tohoney - Wishlist</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.7 css -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <!-- font-awesome v4.6.3 css -->
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <!-- flaticon.css -->
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <!-- jquery-ui.css -->
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %}">
+    <!-- metisMenu.min.css -->
+    <link rel="stylesheet" href="{% static 'assets/css/metisMenu.min.css' %}">
+    <!-- swiper.min.css -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css '%}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- modernizr css -->
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!--Start Preloader-->
+    <div class="preloader-wrap">
+        <div class="spinner"></div>
+    </div>
+    <!-- search-form here -->
+    <div class="search-area flex-style">
+        <span class="closebar">Close</span>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 col-12">
+                    <div class="search-form">
+                        <form action="http://themepresss.com/tf/html/tohoney/search">
+                            <input type="text" placeholder="Search Here...">
+                            <button><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search-form here -->
+    <!-- .breadcumb-area start -->
+    <div class="breadcumb-area bg-img-4 ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>Wishlist</h2>
+                        <ul>
+                            <li><a href="/2/index/">Home</a></li>
+                            <li><span>Wishlist</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .breadcumb-area end -->
+    <!-- cart-area start -->
+    <div class="cart-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="http://themepresss.com/tf/html/tohoney/cart">
+                        <table class="table-responsive cart-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="images">Image</th>
+                                    <th class="product">Product</th>
+                                    <th class="ptice">Price</th>
+                                    <th class="stock">Stock Stutus </th>
+                                    <th class="addcart">Add to Cart</th>
+                                    <th class="remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for val in b %}
+                                <tr>
+                                    <td class="images"><img src="{% static '/images/' %}{{val.pid.pimage}}" alt=""></td>
+                                    <td class="product"><a href="single-product.html">{{val.pid.pname}}</a></td>
+                                    <td class="ptice">{{val.pid.pprice}}</td>
+                                    <td class="stock">In Stock</td>
+                                    <td class="addcart"><a href="/2/cart/">Add to Cart</a></td>
+                                    <td class="remove"><i class="fa fa-times"></i></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cart-area end -->
+    <!-- start social-newsletter-section -->
+    <section class="social-newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="newsletter text-center">
+                        <h3>Subscribe  Newsletter</h3>
+                        <div class="newsletter-form">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Enter Your Email Address...">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end social-newsletter-section -->
+    <!-- jquery latest version -->
+    <script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <!-- mouse_scroll.js -->
+    <script src="{% static 'assets/js/mouse_scroll.js' %}"></script>
+    <!-- scrollup.js -->
+    <script src="{% static 'assets/js/scrollup.js'%}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <!-- imagesloaded.pkgd.min.js -->
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- jquery.zoom.min.js -->
+    <script src="{% static 'assets/js/jquery.zoom.min.js'%}"></script>
+    <!-- swiper.min.js -->
+    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+    <!-- metisMenu.min.js -->
+    <script src="{% static 'assets/js/metisMenu.min.js' %}"></script>
+    <!-- mailchimp.js -->
+    <script src="{% static 'assets/js/mailchimp.js' %}"></script>
+    <!-- jquery-ui.min.js -->
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from themepresss.com/tf/html/tohoney/
+    .html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Nov 2021 06:02:39 GMT -->
+</html>
+{% endblock content %}

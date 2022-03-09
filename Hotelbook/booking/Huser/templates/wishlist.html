@@ -1,0 +1,55 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+
+<!-- ================ Inner banner ================ -->
+<div class="inner-banner inner-banner-bg pt-70 pb-40">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-8 mb-30">
+        <!-- page-title -->
+        <div class="page-title">
+          <h1 style="color:#e68162">Wishlist-show</h1>
+        </div>
+        <!-- page-title end -->
+      </div>
+      <div class="col-lg-4 col-md-4 mb-30">
+        <!-- breadcrumb -->
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="/view/">Home</a></li>
+          <li class="breadcrumb-item active">Wishlist-show</li>
+        </ol>
+        <!-- breadcrumb end -->
+      </div>
+    </div>
+  </div>
+</div><br>
+
+
+    {% for item in ph %}
+         <div class="list-box mb-60 text-center align-self-center">
+                  <a>  <img src="{% static '/' %}{{item.detail_id.img}}" alt=""> </a>
+                    <div class="text-center align-self-center">
+                         <br> {{item.date}}
+                        <div class="feature-text">
+                            <h3 style="color:green;">{{item.detail_id.nm}}</h3><h3>
+                            <span>${{item.detail_id.price}} <em>/ night</em></span></h3>
+                        </div><br>
+                        <div class="btn-wrapper mt-20 d-inline-block w-100">
+                         <form method="post" action="/delete/">
+                             {% csrf_token %}
+                              <a href="/delete/{{item.id}}"><button type="button" style="margin:30px;" class="btn btn-outline-info" >
+                                Remove Item To Cart</button></a>
+
+                         </form>
+                    </div>
+                    </div>
+         </div>
+
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

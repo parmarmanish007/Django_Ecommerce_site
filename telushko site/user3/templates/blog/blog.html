@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+</head>
+<body>
+{% for val in b %}
+<div>
+    <h2><a href="/blog_details/{{val.id}}">{{val.title}}</a></h2>
+</div>
+<div>
+    <h2><a href="/blog_details/{{val.id}}">{{val.price}}</a></h2>
+</div>
+<div>
+    <input href="/blog_details/{{val.id}}/"{{val.description}}>
+</div>
+<div>
+    <a href="/blog_details/{{val.id}}"><img src="{% static 'assets/images/' %}{{val.img}}" height="200" width="200"></a>
+</div>
+{% endfor %}
+<br>
+<div>
+    <a href="/insert/"><button type="button" class="btn btn-success">Insert</button></a>
+</div>
+
+</body>
+</html>

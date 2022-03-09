@@ -1,0 +1,108 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+<!-- ================ Slider area ================ -->
+
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static '/img/slider/slider-1.jpg' %}" alt="" class="img-fluid">
+      </div>
+    </div>
+</div>
+<!-- ================ Slider area end ================ -->
+
+<!-- ================ About area ================ -->
+<div class="about-area pt-70 pb-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-30">
+        <!-- about text -->
+        <div class="about-col">
+          <h6>About us</h6>
+          <h2>We <span>provide solutions</span> to grow your business</h2>
+          <p>fermum sit amet.</p>
+          <p>acus id varius dolor fermum sit amet.</p>
+          <a class=" btn-style-1" href="#" role="button">Explore More
+            <i class="fas fa-long-arrow-alt-right pl-6"></i></a> </div>
+        <!-- about text end -->
+      </div>
+      <div class="col-lg-6 mb-30">
+        <!-- about video -->
+        <div class="about-video-img-box position-relative rounded">
+          <img src="{% static '/img/about-us/about-video-img-1.jpg' %}" alt="" class="img-fluid rounded">
+          <div class="hoverlay d-flex flex-row align-items-center justify-content-center">
+            <a class="venobox d-inline" data-gall="gall-video" data-autoplay="true" data-vbtype="video"
+               href="https://www.youtube.com/watch?v=668nUCeBHyY&amp;t=28s"><i class="fab fa-google-play"></i></a> </div>
+        </div>
+        <!-- about video end -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================ About area end ================ -->
+
+<!-- ================ Most popular hotel ================ -->
+<div class="most-popular-hotel pt-70 pb-70 position-relative">
+  <div class="bg-style-1"></div>
+  <div class="container">
+    <!-- section title -->
+    <div class="section-title text-center">
+      <h2>Most Popular Hotel</h2>
+      <span class="dashed-border"></span> </div>
+    <!-- section title -->
+  </div>
+  <div class="container-fluid">
+    <!-- popular hotel carousel -->
+    <div class="popular-hotel-carousel owl-carousel owl-theme">
+      {% for val in g %}
+      <div class="item">
+        <!-- popular hotel box -->
+        <div class="popular-hotel-box">
+          <div class="imege mb-10"><img src="{% static '/' %}{{val.img1}}" alt="">
+          </div>
+
+          <h4>{{val.name}}</h4>
+        </div>
+        <!-- popular hotel box end -->
+      </div>
+      {% endfor %}
+
+    </div>
+    <!-- popular hotel carousel end -->
+  </div>
+</div>
+<!-- ================ Most popular hotel end ================ -->
+
+<!-- ================ Popular destinations ================ -->
+<div class="popular-destinations pt-70 pb-40 position-relative">
+  <div class="bg-style-1"></div>
+  <div class="container">
+    <!-- section title -->
+    <div class="section-title text-center">
+      <h2>Most Popular Destinations</h2>
+      <span class="dashed-border"></span> </div>
+    <!-- section title -->
+    <div class="row">
+      {% for val in hd %}
+      <div class="col-lg-4 col-md-6 col-sm-6 mb-30">
+        <!-- popular destination box -->
+        <div class="popular-destination-box">
+          <div class="img-holder-overlay">
+            <div class="img-holder">
+              <a href="/show_detail/{{val.id}}"><img src="{% static '/' %}{{val.img}}" alt=""></a></div>
+
+          </div>
+         <div class="title">
+            <a href="/show_detail/{{val.id}}"><h3>{{val.nm}}</h3></a>
+           </div>
+        </div>
+        <!-- popular destination box end -->
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- ================ Popular destinations end ================ -->
+
+{% endblock %}

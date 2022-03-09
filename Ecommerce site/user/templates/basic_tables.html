@@ -1,0 +1,47 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Basic Table</h4>
+                  <p class="card-description">
+                    Add class <code>.table</code>
+                  </p>
+                  <div class="table-responsive">
+                    
+                    <table class="table">
+                    {% for b in form %}
+                    <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Contact</th>
+                          <th>Username</th>
+                          <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>{{b.name}}</td>
+                          <td>{{b.email}}</td>
+                          <td>{{b.contact}}</td>
+                          <td>{{b.username}}</td>
+                          <td>{{b.password}}</td>
+                          <td><label class="badge badge-danger"><a href="/edit/{{b.id}}/">Edit</a></label></td>
+                          <td><label class="badge badge-danger"><a href="/delete/{{b.id}}/">Delete</a></label></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+{% endblock content %}

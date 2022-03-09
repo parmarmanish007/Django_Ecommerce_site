@@ -1,0 +1,74 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+      <!-- Page wrapper  -->
+      <div class="page-wrapper">
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Form Wizard</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+          <!-- Start Page Content -->
+          <div class="card">
+            <div class="card-body wizard-content">
+              <h4 class="card-title">Basic Form Example</h4>
+              <h6 class="card-subtitle"></h6>
+              <form id="example-form" method="post" action="/Hadmin/details/" class="mt-5" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                  <h3>Account</h3>
+                  <section>
+                    <label for="Name">User name *</label>
+                    <input id="Name" name="nm" type="text" class="required form-control"/>
+                    <label for="file">Image *</label>
+                    <input id="file" name="img" type="file" class="required form-control"/>
+
+                    <label for="price">Price value *</label>
+                    <input id="price" name="price" type="text" class="required form-control"/>
+
+                    <label for="address">Address *</label>
+                    <input id="address" name="address" type="text" class="required form-control"/>
+
+                     <label>Address 1 </label>
+                      <select name="area1_id">
+                           {% for val in d %}
+                              <option value="{{val.id}}">{{val.a_name}}</option>
+                           {% endfor %}
+                      </select>
+
+                  </section>
+                   <div class="border-top">
+                      <div class="card-body">
+                        <button type="submit" class="btn btn-primary">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+          <!-- End PAge Content -->
+          <!-- Right sidebar -->
+          <!-- .right-sidebar -->
+          <!-- End Right sidebar -->
+        </div>
+        <!-- End Container fluid  -->
+
+{% endblock %}

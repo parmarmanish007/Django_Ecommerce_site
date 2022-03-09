@@ -1,0 +1,57 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+
+<!-- ================ Inner banner ================ -->
+<div class="inner-banner inner-banner-bg pt-70 pb-40">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-8 mb-30">
+        <!-- page-title -->
+        <div class="page-title">
+          <h1>Gallery</h1>
+        </div>
+        <!-- page-title end -->
+      </div>
+      <div class="col-lg-4 col-md-4 mb-30">
+        <!-- breadcrumb -->
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="/view/">Home</a></li>
+          <li class="breadcrumb-item active">Gallery</li>
+        </ol>
+        <!-- breadcrumb end -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================ Inner banner end ================ -->
+
+<!-- ================ Gallery page ================ -->
+<div class="gallery-page pt-70 pb-40">
+  <div class="container">
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1">
+      {% for val in g %}
+      <div class="col mb-30">
+        <!-- gallery box -->
+
+        <div class="gallery-box">
+          <div class="img-holder-overlay">
+            <div class="img-holder">
+              <img src="{% static '/' %}{{val.img1}}" alt=""></div>
+               <div class="overlay"><a href="{% static '/' %}{{val.img1}}" class="venobox"
+			data-gall="gallery1"><i class="far fa-image"></i></a></div>
+          </div>
+          <div class="title">
+           <center> <h2><b>{{val.name}}</b> </h2></center>
+          </div>
+        </div>
+
+        <!-- gallery box end -->
+      </div>
+         {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- ================ Gallery page end ================ -->
+
+{% endblock %}

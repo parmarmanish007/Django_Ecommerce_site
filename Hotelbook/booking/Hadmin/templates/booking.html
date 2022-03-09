@@ -1,0 +1,63 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Tables</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Hadmin/index/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+          <!-- Start Page Content -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-0">Static Table</h5>
+                </div>
+                <table class="table">
+                  <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>DATE</th>
+                      <th>USER_ID</th>
+                      <th>DETAIL_ID</th>
+
+                  </thead>
+                  <tbody>
+                   {% for val in b %}
+                     <tr>
+                       <td>{{val.id}}</td>
+                      <td>{{val.date}}</td>
+                      <td>{{val.user_id.id}}</td>
+                      <td>{{val.detail2_id.id}}</td>
+
+                     </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+
+        </div>
+          </div>
+        </div>
+{% endblock %}

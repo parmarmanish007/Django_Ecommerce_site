@@ -1,0 +1,49 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+
+<!-- ================ Inner banner ================ -->
+<div class="inner-banner inner-banner-bg pt-70 pb-40">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-8 mb-30"> 
+        <!-- page-title -->
+        <div class="page-title">
+          <h1>Destination Detail</h1>
+        </div>
+        <!-- page-title end --> 
+      </div>
+      <div class="col-lg-4 col-md-4 mb-30"> 
+        <!-- breadcrumb -->
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="/view/">Home</a></li>
+          <li class="breadcrumb-item active">Destination Detail</li>
+        </ol>
+        <!-- breadcrumb end --> 
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================ Inner banner end ================ -->
+<!-- ================ Destination detail page ================ -->
+
+<div class="destination-detail-page pt-70 pb-40">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8 mb-30">
+<!--        <a href="/show_detail/{{hd.id}}/"></a>-->
+        <div class="destination-detail-img mb-15"><img src="{% static '/' %}{{hd.img}}" alt=""></div>
+        <div class="col-lg-6 mb-20">
+            <h2 class="mb-0">{{hd.nm}}</h2>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- ================ Destination detail page end ================ --> 
+{% endblock %}

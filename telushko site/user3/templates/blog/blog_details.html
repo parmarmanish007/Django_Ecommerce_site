@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog_details</title>
+</head>
+<body>
+    <div>
+        <h1 style='color:green'>Blog Details</h1><br>
+    </div>
+    {% for i in b %}
+        <div>
+            <div class="">{{i.id.title}}</div>
+        </div>
+        <div>  
+            <h1 style="color:red"><th>{{i.title}}</th></h1>
+        </div>
+        <div>  
+            <h1 style="color:green"><th>{{i.price}}</th></h1>
+        </div>
+        <div>
+            <h2 style="color:blue"><td>{{i.description}}</td></h2>
+        </div>
+        <div>
+            <td><img src="{% static 'assets/images/' %}{{i.img}}" height="200" width="200"></td>
+        </div>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+      <!-- Page wrapper  -->
+      <div class="page-wrapper">
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Form gallary</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/index/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+          <!-- Start Page Content -->
+          <div class="card">
+            <div class="card-body wizard-content">
+              <h4 class="card-title">Gallary Block</h4>
+              <h6 class="card-subtitle"></h6>
+              <form id="example-form" method="post" action="/Hadmin/gallary/" class="mt-5" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                  <h3>Gallary</h3>
+                  <section>
+                    <label>ID </label>
+                    <select name="detail_id">
+                      {% for val in g %}
+                      <option value="{{val.id}}">{{val.nm}}</option>
+                      {% endfor %}
+                    </select><br>
+                    <label for="text">NAME</label>
+                    <input id="text" name="name" type="text" class="form-control"/><br>
+
+                    <label for="file">Image </label>
+                    <input id="file" name="img1" type="file" class="form-control"/>
+                  </section>
+                   <div class="border-top">
+                      <div class="card-body">
+                        <button type="submit" class="btn btn-primary">OKAY</button>
+                      </div>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+          <!-- End PAge Content -->
+          <!-- Right sidebar -->
+          <!-- .right-sidebar -->
+          <!-- End Right sidebar -->
+        </div>
+        <!-- End Container fluid  -->
+
+{% endblock %}

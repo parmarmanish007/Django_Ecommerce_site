@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Basic Table </h4>
+                  <p class="card-description">
+                    Add class <code>.table</code>
+                  </p>
+                  <div class="table-responsive">
+                    
+                    <table class="table">
+                    {% for val in b %}
+                    <thead>
+                        <tr>
+                          <th>Product_Name</th>
+                          <th>Product_Image</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Blog_id</th>
+                          <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>{{val.pname}}</td>
+                          <td><img src="{% static 'images/' %}{{val.pimage}}"></td>
+                          <td>{{val.pdescription}}</td>
+                          <td>{{val.pprice}}</td>
+                          <td>{{val.pid}}</td>
+                          <td><label class="badge badge-danger"><a href="/product_edit/{{val.id}}/">Edit</a></label>
+                          <label class="badge badge-danger"><a href="/product_delete/{{val.id}}/">Delete</a></label></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+{% endblock content %}

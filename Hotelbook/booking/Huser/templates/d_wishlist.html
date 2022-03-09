@@ -1,0 +1,78 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+    <!-- .breadcumb-area start -->
+    <div class="breadcumb-area bg-img-4 ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>Wishlist</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Wishlist</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .breadcumb-area end -->
+    <!-- cart-area start -->
+
+    <div class="cart-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#">
+                        <table class="table-responsive cart-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="images">Image</th>
+                                    <th class="images">Name</th>
+                                    <th class="ptice">Price</th>
+                                    <th class="addcart">Add to Cart</th>
+                                    <th class="remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                 {% for item in ph %}
+                                <tr>
+                                    <td class="images"><img src="{% static '/' %}{{item.detail_id.img}}" alt=""></td>
+                                    <td class="name"><a href="#"><h3 style="color:green;">{{item.detail_id.nm}}</h3></a></td>
+                                    <td class="ptice">${{item.detail_id.price}}</td>
+                                    <td class="addcart"><a href="/wishlist_add/">Add to Cart</a></td>
+                                    <td class="remove"><i class="fa fa-times"></i></td>
+                                </tr>
+                              {% endfor %}
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart-area end -->
+    <!-- start social-newsletter-section -->
+<!--    <section class="social-newsletter-section">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <div class="newsletter text-center">-->
+<!--                        <h3>Subscribe  Newsletter</h3>-->
+<!--                        <div class="newsletter-form">-->
+<!--                            <form>-->
+<!--                                <input type="text" class="form-control" placeholder="Enter Your Email Address...">-->
+<!--                                <button type="submit"><i class="fa fa-send"></i></button>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; end container &ndash;&gt;-->
+<!--    </section>-->
+    <!-- end social-newsletter-section -->
+{% endblock %}

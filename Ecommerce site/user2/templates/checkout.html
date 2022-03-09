@@ -1,0 +1,122 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+    <!-- .breadcumb-area start -->
+    <div class="breadcumb-area bg-img-4 ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>Checkout</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Checkout</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .breadcumb-area end -->
+    <!-- checkout-area start -->
+    <div class="checkout-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="checkout-form form-style">
+                        <h3>Billing Details</h3>
+                        <form action="/2/checkout/" method='POST'>
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-6 col-12">
+                                    <input type="hidden" name='user' value={{request.session.id}} >
+                                </div>
+                                <div class="col-12">
+                                    <p>Your Address *</p>
+                                    <input type="text" name='address'>
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <p>Apprtment *</p>
+                                    <input type="text" name='apprtment'>
+                                </div>
+                                <div class="col-12">
+                                    <p>Country *</p>
+                                    <input type="text" name='country'>
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <p>Phone No. *</p>
+                                    <input type="text" name='phone'>
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <p>Email Address *</p>
+                                    <input type="email" name='email'>
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <p>Postcode/ZIP</p>
+                                    <input type="text" name='zip'>
+                                </div><br>
+                                <input type="submit" value='Submit'>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="order-area">
+                        
+                        <h3>Your Order</h3>
+                        <ul class="total-cost">
+                            {% for val in a %}
+                            <li>{{val.pid.pro_name}}  <span class="pull-right">${{val.pid.price}}</span></li>
+                            {% endfor %}
+                            <li>Total<span class="pull-right">$380.00</span></li>
+                        </ul>
+                        
+                        <form action="/2/order/" method='POST'>
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-6 col-12">
+                                    <input type="hidden" name='user' value={{request.session.id}} >
+                                </div>
+                                <div class="col-12">
+                                    <input type="hidden" name='billing' value={{id}}>
+                                </div>
+                                <div class="col-12">
+                                    {% for i in ord %}
+                                        {{i.orderdate}}
+                                    {% endfor %}
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <p>Ordered *</p>
+                                    <input type="checkbox" name='ordered'>
+                                </div>
+                                <button>Place Order</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- checkout-area end -->
+    <!-- start social-newsletter-section -->
+    <section class="social-newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="newsletter text-center">
+                        <h3>Subscribe  Newsletter</h3>
+                        <div class="newsletter-form">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Enter Your Email Address...">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end social-newsletter-section -->
+{% endblock content %}

@@ -1,0 +1,265 @@
+{% extends 'header2.html' %}
+{% block content %}
+{% load static %}
+    <!-- slider-area start -->
+    <div class="slider-area">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-inner slide-inner7">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-lg-9 col-12">
+                                    <div class="slider-content">
+                                        <div class="slider-shape">
+                                            <h2 data-swiper-parallax="-500">Amazing Pure Nature Coconut Oil</h2>
+                                            <p data-swiper-parallax="-400">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide overlay">
+                    <div class="single-slider slide-inner slide-inner1">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-lg-9 col-12">
+                                    <div class="slider-content">
+                                        <div class="slider-shape">
+                                            <h2 data-swiper-parallax="-500">Amazing Pure Nature Hohey</h2>
+                                            <p data-swiper-parallax="-400">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-inner slide-inner8">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-lg-9 col-12">
+                                    <div class="slider-content">
+                                        <div class="slider-shape">
+                                            <h2 data-swiper-parallax="-500">Amazing Pure Nut Oil</h2>
+                                            <p data-swiper-parallax="-400">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- slider-area end -->
+    <!-- featured-area start -->
+    <div class="featured-area featured-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="featured-active2 owl-carousel next-prev-style">
+                        {% for val in a %}
+                        <div class="featured-wrap">
+                            <div class="featured-img">
+                                <img src="{% static '/images/' %}{{val.image}}" alt="" height='100%' width='100%'>
+                                <div class="featured-content">
+                                    <a href="shop.html">{{val.item}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div class="featured-wrap">
+                            <div class="featured-img">
+                                <img src="{% static 'assets/images/featured/7.jpg' %}" alt="">
+                                <div class="featured-content">
+                                    <a href="shop.html">Mustard Oil</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-wrap">
+                            <div class="featured-img">
+                                <img src="{% static 'assets/images/featured/8.jpg' %}" alt="">
+                                <div class="featured-content">
+                                    <a href="shop.html">Olive Oil</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-wrap">
+                            <div class="featured-img">
+                                <img src="{% static 'assets/images/featured/6.jpg' %}" alt="">
+                                <div class="featured-content">
+                                    <a href="shop.html">Pure Honey</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-wrap">
+                            <div class="featured-img">
+                                <img src="{% static 'assets/images/featured/8.jpg' %}" alt="">
+                                <div class="featured-content">
+                                    <a href="shop.html">Olive Oil</a>
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- featured-area end -->
+    <!-- product-area start -->
+    <div class="product-area product-area-2">
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Best Seller</h2>
+                        <img src="{% static 'assets/images/section-title.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product-area end -->
+    <!-- banner-area start -->
+    <div class="banner-area bg-img-8">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6 col-md-8 offset-md-4">
+                    <div class="banner-wrap">
+                        <p>Neture Oil Collection</p>
+                        <h2>upto<span>50%</span> Off</h2>
+                        <a href="shop.html">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner-area end -->
+    <!-- product-area start -->
+    <div class="product-area">
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Our Latest Product</h2>
+                        <img src="{% static 'assets/images/section-title.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <ul class="row">
+                <li class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                    {% for val in b %}
+                    <div class="product-wrap">
+                        <div class="product-img">
+                            <span>Sale</span>
+                            <a href="/2/product_details/{{val.id}}/"><img src="{% static '/images/' %}{{val.pimage}}" alt=""></a>
+                            {% comment %} <div class="product-icon flex-style">
+                                <ul>
+                                    <li><a data-toggle="modal" data-target="#exampleModalCenter" href="/2/product_details/{{val.id}}/"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href=""><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+                                </ul>
+                            </div> {% endcomment %}
+                        </div>
+                        <div class="product-content">
+                            <h3><a href="/2/product_details/{{val.id}}/">{{val.pro_name}}</a></h3>
+                            <p class="pull-left">${{val.price}}
+                            </p>
+                            <ul class="pull-right d-flex">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star-half-o"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </li>
+                <li class="col-12 text-center">
+                    <a class="loadmore-btn" href="javascript:void(0);">Load More</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- product-area end -->
+    <!-- testmonial-area start -->
+    <div class="testmonial-area testmonial-area2 bg-img-2 black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="test-title text-center">
+                        <h2>What Our client Says</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-12">
+                    <div class="testmonial-active owl-carousel">
+                        <div class="test-items test-items2">
+                            <div class="test-content">
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical LatinContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</p>
+                                <h2>Elizabeth Ayna</h2>
+                                <p>CEO of Woman Fedaration</p>
+                            </div>
+                            <div class="test-img2">
+                                <img src="{% static 'assets/images/test/1.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="test-items test-items2">
+                            <div class="test-content">
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical LatinContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</p>
+                                <h2>Elizabeth Ayna</h2>
+                                <p>CEO of Woman Fedaration</p>
+                            </div>
+                            <div class="test-img2">
+                                <img src="{% static 'assets/images/test/1.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="test-items test-items2">
+                            <div class="test-content">
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical LatinContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</p>
+                                <h2>Elizabeth Ayna</h2>
+                                <p>CEO of Woman Fedaration</p>
+                            </div>
+                            <div class="test-img2">
+                                <img src="{% static 'assets/images/test/1.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- testmonial-area end -->
+    <!-- start social-newsletter-section -->
+    <section class="social-newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="newsletter text-center">
+                        <h3>Subscribe  Newsletter</h3>
+                        <div class="newsletter-form">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Enter Your Email Address...">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end social-newsletter-section -->
+
+	{% endblock %}
+    
