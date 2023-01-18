@@ -1,0 +1,5 @@
+telushko site/venv/
+Hotelbook/booking/venv/
+Ecommerce site/venv/
+.idea/
+__pycache__/
